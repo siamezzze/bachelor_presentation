@@ -4,6 +4,8 @@
 \usepackage[english,russian]{babel}
 \usepackage{amssymb,amsfonts,amsmath,mathtext}
 \usepackage{cite,enumerate,float,indentfirst}
+\usepackage[export]{adjustbox}
+\usepackage{wrapfig}
 
 \graphicspath{{images/}}
 
@@ -137,7 +139,7 @@
   \item Каноническое уравнение
   $$ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 $$
   \item Поворот
-  $$ \frac{(x\cos A + y\sin A)^2}{a^2} + \frac{(x\sin A - y\cos A)^2}{b^2} = 1 $$
+  $$ \frac{(x\cos \theta + y\sin A)^2}{a^2} + \frac{(x\sin A - y\cos A)^2}{b^2} = 1 $$
   \item Смещение
   \small
   $$ \frac{((x - x_0)\cos A + (y - y_0)\sin A)^2}{a^2}  + $$
@@ -232,19 +234,31 @@
 \section{Реализация}
 %------------------------------------------------
 \begin{frame}
-\frametitle{Использованные инструменты}
+\frametitle{Реализация}
 \begin{itemize}
+  \item Обе модификации объединены для большего ускорения
   \item Язык реализации: C++ (g++ версии 4.9.2)
   \item OpenCV 3.0
 \end{itemize}
 \end{frame}
 
+%------------------------------------------------
+
 \begin{frame}
 \frametitle{Полученные результаты}
-\begin{figure}[H]
-  \center
-\fbox{\includegraphics[width=0.32\textwidth]{res}}
-\end{figure}
+\begin{wrapfigure}{l}{0.32\linewidth} 
+\vspace{-3ex}
+\includegraphics[width=0.32\textwidth,left]{res}
+\label{fig:res}
+\end{wrapfigure}
+Найденные эллипсы:
+\small
+\begin{itemize}
+  \item $(x_0 = 210, y_0 = 149, a = 133.795, b = 65, A = -0.343024)$
+  \item $(x_0 = 319, y_0 = 94, a = 135.533, b = 68, A = -0.0221366)$
+  \item $(x_0 = 244, y_0 = 319, a = 111.005, b = 64, A = -0.00900877)$
+\end{itemize}
+\normalsize
 \end{frame}
 %------------------------------------------------
 
