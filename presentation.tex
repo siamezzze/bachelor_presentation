@@ -6,6 +6,7 @@
 \usepackage{cite,enumerate,float,indentfirst}
 \usepackage[export]{adjustbox}
 \usepackage{wrapfig}
+\usepackage{pgfplots}
 
 \graphicspath{{images/}}
 
@@ -152,17 +153,16 @@
 
 \section{Преобразование Хафа}
 \begin{frame}
-\frametitle{Преобразование Хафа --- общая схема}
+\frametitle{Преобразование Хафа}
+Общая схема:
 \begin{itemize}
   \item Определение параметров
   \item Голосование
   \item Выбор кандидатов   
 \end{itemize}
-\end{frame}
+Сложность: \(O(A^{m-2})\), где \(A\) - количество точек границ, \(m\) - количество параметров.
 
-%------------------------------------------------
-\begin{frame}
-\frametitle{Основные применения}
+Основные применения:
 \begin{itemize}
   \item Поиск прямых
   \item Поиск окружностей
@@ -191,7 +191,7 @@
 \begin{frame}
 \frametitle{Предобработка}
 \begin{itemize}
-  \item Преобразование к крадратному: $N \times N$, где $N = 2^t$
+  \item Преобразование к размеру $N \times N$, где $N = 2^t$
   \item Снижение уровня шума
   \item Выделение границ
 \end{itemize}
@@ -288,6 +288,16 @@ $$b = ?$$
   \item $(x_0 = 244, y_0 = 319, a = 111.005, b = 64, A = -0.00900877)$
 \end{itemize}
 \normalsize
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Результаты работы программы}
+\center
+\begin{tabular}{ cc }
+  \fbox{\includegraphics[width=0.25\textwidth]{r1}} & \fbox{\includegraphics[width=0.25\textwidth]{r2}} \\
+  \fbox{\includegraphics[width=0.25\textwidth]{res6}} & \fbox{\includegraphics[width=0.25\textwidth]{res7}} 
+\end{tabular}
 \end{frame}
 
 %------------------------------------------------
